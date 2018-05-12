@@ -1,12 +1,13 @@
 package com.pvp.enc.employee;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Employee {
 
-	@Id
+	@Id @GeneratedValue
 	private int empId;
 	private String name;
 	private String job;

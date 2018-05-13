@@ -29,6 +29,16 @@ public class App {
 
 		session.save(emp);
 		tx.commit();
+
+		Employee getEmp = new Employee();
+		System.out.println(getEmp.toString());
+
+		tx = session.beginTransaction();
+		getEmp = (Employee) session.get(Employee.class, 1);
+		tx.commit();
+		System.out.println(getEmp.toString());
+
+		session.close();
 	}
 
 }

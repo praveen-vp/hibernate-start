@@ -1,21 +1,27 @@
 package com.pvp.enc.employee;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Employee {
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private int empId;
 	private String name;
+
+	@Column(name = "job_name")
 	private String job;
+
 	private String department;
 
 	@Override
 	public String toString() {
-		return String.format("Employee [empId=%s, name=%s, job=%s, department=%s]", empId, name, job, department);
+		return String.format("Employee [empId=%s, name=%s, job=%s," + " department=%s]", empId, name, job, department);
 	}
 
 	public int getEmpId() {
